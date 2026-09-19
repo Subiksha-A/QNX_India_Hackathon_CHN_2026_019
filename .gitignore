@@ -1,0 +1,34 @@
+# Build outputs
+*.o
+*.elf
+*.map
+*.dump
+*.bin
+*.hex
+qnx_gateway
+qnx_master
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# QNX/runtime output
+*.log
+/tmp/
+
+# Experimental raw output — keep intentional CSVs under results/
+*.csv
+!results/**/*.csv
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local toolchain/project metadata
+.settings/
+.project
+.cproject
