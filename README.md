@@ -24,9 +24,9 @@ The gateway-side code has historically also supported a dual-CAN configuration i
 
 This is not a claim that the prototype is a production automotive safety system. It is a controlled demonstration of principles that matter in automotive real-time software:
 
-- **CAN arbitration:** AUTOSAR defines CAN L-PDU priority through the CAN identifier; lower numerical identifiers have higher priority. citehttps://www.autosar.org/fileadmin/standards/R24-11/CP/AUTOSAR_CP_SWS_CANDriver.pdf
-- **ECU software scheduling:** QNX uses priority-based preemptive thread scheduling, and its architecture is designed around predictable real-time execution. citehttps://www.qnx.com/developers/articles/article_298_1.html
-- **Fault isolation:** QNX Neutrino places drivers and services outside the microkernel in protected user-space processes, supporting fault isolation and restartable components. citehttps://www.qnx.com/products/intl/neutrino_rtos/
+- **CAN arbitration:** AUTOSAR defines CAN L-PDU priority through the CAN identifier; lower numerical identifiers have higher priority. https://www.autosar.org/fileadmin/standards/R24-11/CP/AUTOSAR_CP_SWS_CANDriver.pdf
+- **ECU software scheduling:** QNX uses priority-based preemptive thread scheduling, and its architecture is designed around predictable real-time execution. https://www.qnx.com/developers/articles/article_298_1.html
+- **Fault isolation:** QNX Neutrino places drivers and services outside the microkernel in protected user-space processes, supporting fault isolation and restartable components. https://www.qnx.com/products/intl/neutrino_rtos/
 
 The project therefore separates three different decisions:
 
@@ -58,7 +58,8 @@ These are related but are **not the same mechanism**.
 
 ## 4. What QNX contributes
 
-QNX is particularly well matched to this prototype because the project needs **priority-based preemption, bounded execution paths, resource-manager access to hardware, POSIX threading, priority inheritance, process isolation and real-time instrumentation**. QNX documents priority-based scheduling, preemption and priority inheritance as core real-time mechanisms. citehttps://www.qnx.com/developers/articles/article_298_1.html
+QNX is particularly well matched to this prototype because the project needs **priority-based preemption, bounded execution paths, resource-manager access to hardware, POSIX threading, priority inheritance, process isolation and real-time instrumentation**. QNX documents priority-based scheduling, preemption and priority inheritance as core real-time mechanisms. 
+https://www.qnx.com/developers/articles/article_298_1.html
 
 The project deliberately uses QNX features rather than treating QNX as simply a Linux replacement:
 
@@ -87,7 +88,7 @@ The established gateway versions use the following hierarchy:
 | Gateway | 30 | Normal routing |
 | Diagnostics | 15 | Logging/telemetry/monitoring |
 
-The baseline code also defines a **5 ms safety deadline target** and an **85% telemetry queue load-shedding threshold**. These are experimental design parameters, not universal automotive limits. citeturn10file0L68-L90
+The baseline code also defines a **5 ms safety deadline target** and an **85% telemetry queue load-shedding threshold**. These are experimental design parameters, not universal automotive limits.
 
 ## 6. Stress experiment
 
@@ -101,7 +102,7 @@ The project uses controlled CAN congestion rather than claiming a cybersecurity 
 - CAN bus load
 - CPU utilisation
 
-The repository should contain **measured results only** under `results/`. Dashboard demo values are explicitly synthetic and must never be presented as jury measurements. The dashboard source itself warns that demo data is for presentation development and that actual jury measurements should come from the QNX gateway. citeturn15file5L702-L708
+The repository should contain **measured results only** under `results/`. Dashboard demo values are explicitly synthetic and must never be presented as jury measurements. The dashboard source itself warns that demo data is for presentation development and that actual jury measurements should come from the QNX gateway.
 
 ## 7. Final design direction: criticality-aware scheduling
 
